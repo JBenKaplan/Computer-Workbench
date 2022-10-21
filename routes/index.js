@@ -6,9 +6,9 @@ router.get('/', (req, res) => res.send('This is root!'))
 
 router.get('/parts', controllers.getAllParts)
 
-router.post('/parts', controllers.createPart)
+router.post('/parts/create', controllers.createPart)
 
-router.post('/wb', controllers.createWorkBench)
+// router.post('/wb', controllers.createWorkBench)
 
 router.get('/parts/:id', controllers.getPartById)
 

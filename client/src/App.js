@@ -2,7 +2,9 @@ import './App.css'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import WorkBench from './components/WorkBench'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Link } from 'react-router-dom'
+import Home from './components/Home'
+import CreatePart from './components/CreatePart'
 
 const App = () => {
   const [parts, setParts] = useState([])
@@ -22,11 +24,15 @@ const App = () => {
   }, [])
 
   return (
-    <div>
-      <header>
-        <h1>Nav Bar</h1>
-      </header>
-      <WorkBench parts={parts} />
+    <div className="App">
+      <header></header>
+      <div className="routes">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/parts" element={<WorkBench parts={parts} />} />
+          <Route path="/parts/create" element={<CreatePart />} />
+        </Routes>
+      </div>
     </div>
   )
 }
