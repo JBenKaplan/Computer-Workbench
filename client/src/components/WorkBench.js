@@ -1,10 +1,14 @@
 import Nav from './Nav'
+import { Link } from 'react-router-dom'
 
 const WorkBench = (props) => {
   return (
     <main>
       <Nav />
       <div className="partsButtons">
+        {/* <Link to="/CPU">
+          <div>CPU</div>
+        </Link> */}
         <button>CPU</button>
         <button>GPU</button>
         <button>RAM</button>

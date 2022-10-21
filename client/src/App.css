@@ -1,11 +1,13 @@
 .navbar {
   display: flex;
   justify-content: space-between;
+  margin: 0 20px;
 }
 
-.partsbutton {
+.partsButtons {
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 
 .removePart {
@@ -13,6 +15,7 @@
 }
 
 form {
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
