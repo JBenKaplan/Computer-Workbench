@@ -4,32 +4,18 @@ import axios from 'axios'
 import WorkBench from './components/WorkBench'
 import { Routes, Route, Link } from 'react-router-dom'
 import Home from './components/Home'
-import CreatePart from './components/CreatePart'
+import CreatePart from './pages/CreatePart'
+import AllParts from './pages/AllParts'
 
 const App = () => {
-  const [parts, setParts] = useState([])
-
-  const getParts = async () => {
-    try {
-      let res = await axios.get('http://localhost:3001/parts')
-      console.log(res.data.parts)
-      setParts(res.data.parts)
-    } catch (err) {
-      console.log(err)
-    }
-  }
-
-  useEffect(() => {
-    getParts()
-  }, [])
-
   return (
     <div className="App">
       <header></header>
       <div className="routes">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/parts" element={<WorkBench parts={parts} />} />
+          <Route path="/parts" element={<WorkBench />} />
+          <Route path="/parts/all" element={<AllParts />} />
           <Route path="/parts/create" element={<CreatePart />} />
         </Routes>
       </div>

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import axios from 'axios'
-import Nav from './Nav'
+import Nav from '../components/Nav'
 
 const CreatePart = (props) => {
   const initialState = {
@@ -31,6 +31,7 @@ const CreatePart = (props) => {
   return (
     <div>
       <Nav />
+      <h3>Create a New Part</h3>
       <form onSubmit={handleSubmit}>
         <label htmlFor="partType">Type of Part:</label>
         <select onChange={handleChange} id="partType" value={formState.type}>

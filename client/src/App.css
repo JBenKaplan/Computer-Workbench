@@ -5,17 +5,15 @@
 }
 
 .partsButtons {
+  margin: 20px auto;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
 }
 
-.removePart {
-  display: flex;
-}
-
 form {
-  margin: 0 auto;
+  margin: 50px auto;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -31,6 +29,7 @@ header {
 
 body {
   text-align: center;
+  background-color: rgba(5, 78, 150, 0.701);
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -42,4 +41,8 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.CPU .GPU .RAM .MOTHERBOARD .CASE .APP_PART {
+  border: black solid 2px;
 }
