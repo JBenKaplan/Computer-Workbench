@@ -1,6 +1,8 @@
 # Computer Workbench
 
-### Ben Kaplan
+### By: Ben Kaplan
+
+### Date: 10/28/2022
 
 | [GitHub](https://github.com/JBenKaplan) | [Trello](https://trello.com/b/aBLRMNPP/computer-workbench) | [LinkedIn](https://www.linkedin.com/in/jbenkaplan/) | [Game Page (TBD)]() |
 
