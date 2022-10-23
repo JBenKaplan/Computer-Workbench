@@ -40,11 +40,11 @@ const CreatePart = (props) => {
             - Select Part Type -{' '}
           </option>
           <option value="CPU">CPU</option>
-          <option value="MOBO">Motherboard</option>
           <option value="GPU">GPU</option>
+          <option value="MOTHERBOARD">Motherboard</option>
           <option value="RAM">RAM</option>
-          <option value="Case">Case</option>
-          <option value="Other">Other</option>
+          <option value="CASE">Case</option>
+          <option value="OTHER">Other</option>
         </select>
         <label htmlFor="partName">Name of Part:</label>
         <input
@@ -60,13 +60,27 @@ const CreatePart = (props) => {
           id="partPrice"
           value={formState.price}
         />
-        <label htmlFor="message">Message</label>
+        <label htmlFor="partBrand">Brand:</label>
+        <input
+          onChange={handleChange}
+          type="text"
+          id="partBrand"
+          value={formState.brand}
+        />
+        <label htmlFor="SKU">SKU:</label>
+        <input
+          onChange={handleChange}
+          type="text"
+          id="SKU"
+          value={formState.SKU}
+        />
+        <label htmlFor="partDetails">Details:</label>
         <textarea
           onChange={handleChange}
-          id="message"
+          id="partDetails"
           cols="30"
           rows="10"
-          value={formState.message}
+          value={formState.details}
         ></textarea>
         <button type="submit">Send</button>
       </form>

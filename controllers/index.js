@@ -5,10 +5,28 @@ const createWorkBench = async (req, res) => {
     const workBench = await new WorkBench(req.body)
     await workBench.save()
     return res.status(201).json({
-      part
+      workbench
     })
   } catch (error) {
     return res.status(500).json({ error: error.message })
+  }
+}
+
+const getAllBenches = async (req, res) => {
+  try {
+    const benches = await Part.find()
+    return res.status(200).json({ benches })
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
+const joinWorkBench = async (req, res) => {
+  try {
+    const bench = await Part.find()
+    return res.status(200).json({ bench })
+  } catch (error) {
+    return res.status(500).send(error.message)
   }
 }
 
@@ -49,7 +67,6 @@ const getPartById = async (req, res) => {
 const getPartByType = async (req, res) => {
   try {
     const type = req.params
-    console.log(type)
     const part = await Part.find({ type: type.id.toUpperCase() })
     if (part) {
       return res.status(200).json({ part })
@@ -86,6 +103,8 @@ const deletePart = async (req, res) => {
 
 module.exports = {
   createWorkBench,
+  getAllBenches,
+  joinWorkBench,
   createPart,
   getAllParts,
   getPartById,

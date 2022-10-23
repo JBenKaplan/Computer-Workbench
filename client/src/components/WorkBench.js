@@ -5,6 +5,9 @@ const WorkBench = (props) => {
   return (
     <main>
       <Nav />
+      <div className="budgetAmount">
+        <h3></h3>
+      </div>
       <div className="partsButtons">
         <Link to="/parts/type/CPU">
           <div className="CPU">

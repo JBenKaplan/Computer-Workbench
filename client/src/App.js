@@ -1,11 +1,11 @@
 import './App.css'
-import { useState, useEffect } from 'react'
-import axios from 'axios'
 import WorkBench from './components/WorkBench'
-import { Routes, Route, Link } from 'react-router-dom'
+import NewWorkBench from './pages/NewWorkbench'
+import { Routes, Route } from 'react-router-dom'
 import Home from './components/Home'
 import CreatePart from './pages/CreatePart'
 import AllParts from './pages/AllParts'
+import AllCpu from './pages/AllCpu'
 
 const App = () => {
   return (
@@ -16,7 +16,9 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/parts" element={<WorkBench />} />
           <Route path="/parts/create" element={<CreatePart />} />
-          <Route path="/parts/all" element={<WorkBench />} />
+          <Route path="/wb/create" element={<NewWorkBench />} />
+          <Route path="/parts/all" element={<AllParts />} />
+          <Route path="/parts/type/:id" element={<AllCpu />} />
         </Routes>
       </div>
     </div>

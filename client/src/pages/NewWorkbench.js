@@ -1,4 +1,8 @@
-const newWorkBench = () => {
+import { useState } from 'react'
+import axios from 'axios'
+import Nav from '../components/Nav'
+
+const NewWorkBench = (props) => {
   const initialState = {
     owner: '',
     budget: '',
@@ -9,7 +13,7 @@ const newWorkBench = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    let res = await axios.post('http://localhost:3001/', formState)
+    let res = await axios.post('http://localhost:3001/wb/create', formState)
     console.log(res.data)
     setFormState(initialState)
     props.getIssues()
@@ -34,7 +38,7 @@ const newWorkBench = () => {
         <label htmlFor="budget">Budget: if no budget, leave blank</label>
         <input
           onChange={handleChange}
-          type="text"
+          type="number"
           id="budget"
           value={formState.budget}
         />
@@ -58,4 +62,4 @@ const newWorkBench = () => {
   )
 }
 
-export default newWorkBench
+export default NewWorkBench

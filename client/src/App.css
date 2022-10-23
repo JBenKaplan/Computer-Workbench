@@ -46,3 +46,11 @@ code {
 .CPU .GPU .RAM .MOTHERBOARD .CASE .APP_PART {
   border: black solid 2px;
 }
+
+img {
+  width: 200px;
+  height: 200px;
+}
+
+.partList {
+}

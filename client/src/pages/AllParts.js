@@ -8,7 +8,7 @@ const AllParts = () => {
 
   const getParts = async () => {
     try {
-      let res = await axios.get('http://localhost:3001/parts/')
+      let res = await axios.get('http://localhost:3001/parts/all')
       console.log(res.data.parts)
       setParts(res.data.parts)
     } catch (err) {
@@ -23,11 +23,11 @@ const AllParts = () => {
   return (
     <main>
       <Nav />
+      <p>{parts.type}</p>
       {parts.map((part) => (
         <div key={part._id}>
-          <img src={part.img} alt="picture" />
+          <img src={part.image} alt="picture" />
           <p>{part.name}</p>
-          <p>{part.type}</p>
           <p>${part.price}</p>
           <p>{part.details}</p>
           <button className="addPart">Add</button>
