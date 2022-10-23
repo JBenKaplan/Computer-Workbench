@@ -2,14 +2,13 @@ import Nav from '../components/Nav'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Route, Routes } from 'react-router-dom'
-// import WorkBench from '../components/workBench'
 
 const AllParts = () => {
   const [parts, setParts] = useState([])
 
   const getParts = async () => {
     try {
-      let res = await axios.get('http://localhost:3001/parts')
+      let res = await axios.get('http://localhost:3001/parts/')
       console.log(res.data.parts)
       setParts(res.data.parts)
     } catch (err) {
@@ -26,10 +25,12 @@ const AllParts = () => {
       <Nav />
       {parts.map((part) => (
         <div key={part._id}>
-          <h2>
-            {part.name}
-            <button className="addPart">Add</button>
-          </h2>
+          <img src={part.img} alt="picture" />
+          <p>{part.name}</p>
+          <p>{part.type}</p>
+          <p>${part.price}</p>
+          <p>{part.details}</p>
+          <button className="addPart">Add</button>
         </div>
       ))}
     </main>
