@@ -47,14 +47,14 @@ const CreatePart = (props) => {
           <option value="CASE">Case</option>
           <option value="OTHER">Other</option>
         </select>
-        <label htmlFor="partName">Name of Part:</label>
+        <label htmlFor="partName">Part Name:</label>
         <input
           onChange={handleChange}
           type="text"
           id="partName"
           value={formState.name}
         />
-        <label htmlFor="partPrice">Part Price:</label>
+        <label htmlFor="partPrice">Part Price USD:</label>
         <input
           onChange={handleChange}
           type="number"
@@ -75,7 +75,7 @@ const CreatePart = (props) => {
           id="SKU"
           value={formState.SKU}
         />
-        <label htmlFor="partDetails">Details:</label>
+        <label htmlFor="partDetails">Details: (separate by | )</label>
         <textarea
           onChange={handleChange}
           id="partDetails"
@@ -84,7 +84,6 @@ const CreatePart = (props) => {
           value={formState.details}
         ></textarea>
         <button type="submit">Send</button>
-        <button onClick={() => <Link to="/parts" />}>Back</button>
       </form>
     </div>
   )

@@ -1,5 +1,6 @@
 const { Part, WorkBench } = require('../models')
 
+//Workbench controllers
 const createWorkBench = async (req, res) => {
   try {
     const workBench = await new WorkBench(req.body)
@@ -14,7 +15,7 @@ const createWorkBench = async (req, res) => {
 
 const getAllBenches = async (req, res) => {
   try {
-    const benches = await Part.find()
+    const benches = await WorkBench.find()
     return res.status(200).json({ benches })
   } catch (error) {
     return res.status(500).send(error.message)
@@ -23,13 +24,27 @@ const getAllBenches = async (req, res) => {
 
 const joinWorkBench = async (req, res) => {
   try {
-    const bench = await Part.find()
+    const bench = await WorkBench.find()
     return res.status(200).json({ bench })
   } catch (error) {
     return res.status(500).send(error.message)
   }
 }
 
+const deleteBench = async (req, res) => {
+  try {
+    const { id } = req.params
+    const deleted = await WorkBench.findByIdAndDelete(id)
+    if (deleted) {
+      return res.status(200).send('Workbench deleted')
+    }
+    throw new Error('Workbench not found')
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
+///Part Controller
 const createPart = async (req, res) => {
   try {
     const part = await new Part(req.body)
@@ -105,6 +120,7 @@ module.exports = {
   createWorkBench,
   getAllBenches,
   joinWorkBench,
+  deleteBench,
   createPart,
   getAllParts,
   getPartById,

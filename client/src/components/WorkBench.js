@@ -9,29 +9,34 @@ const WorkBench = (props) => {
         <h3></h3>
       </div>
       <div className="partsButtons">
-        <Link to="/parts/type/CPU">
+        <Link to="/parts/type/cpu">
           <div className="CPU">
             <h3>CPU</h3>
           </div>
         </Link>
-        <Link to="/parts/type/GPU">
+        <Link to="/parts/type/gpu">
           <div className="GPU">
             <h3>GPU</h3>
           </div>
         </Link>
-        <Link to="/parts/type/RAM">
+        <Link to="/parts/type/ram">
           <div className="RAM">
             <h3>RAM</h3>
           </div>
         </Link>
-        <Link to="/parts/type/MOTHERBOARD">
+        <Link to="/parts/type/motherboard">
           <div className="MOTHERBOARD">
             <h3>Motherboard</h3>
           </div>
         </Link>
-        <Link to="/parts/type/CASE">
+        <Link to="/parts/type/case">
           <div className="CASE">
             <h3>Case</h3>
+          </div>
+        </Link>
+        <Link to="/parts/type/other">
+          <div className="OTHER">
+            <h3>Other</h3>
           </div>
         </Link>
         <Link to="/parts/create">

@@ -6,7 +6,6 @@ const Part = new Schema(
     type: { type: String },
     price: { type: Number },
     details: { type: String },
-    misc: { type: String },
     brand: { type: String },
     SKU: { type: String },
     inUse: { type: Boolean },
