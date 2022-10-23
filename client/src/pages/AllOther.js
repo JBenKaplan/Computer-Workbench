@@ -7,7 +7,7 @@ const AllParts = () => {
 
   const getParts = async () => {
     try {
-      let res = await axios.get('http://localhost:3001/parts/type/cpu')
+      let res = await axios.get('http://localhost:3001/parts/type/other')
       console.log(res.data.part)
       setParts(res.data.part)
     } catch (err) {
@@ -29,7 +29,7 @@ const AllParts = () => {
             <p>{part.name}</p>
             <p>${part.price}</p>
             <p>{part.details}</p>
-            <button className="addCPU">Add CPU</button>
+            <button className="addOTHER">Add Part</button>
           </div>
         ))}
       </div>

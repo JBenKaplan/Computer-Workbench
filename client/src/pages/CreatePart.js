@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Nav from '../components/Nav'
 
@@ -83,6 +84,7 @@ const CreatePart = (props) => {
           value={formState.details}
         ></textarea>
         <button type="submit">Send</button>
+        <button onClick={() => <Link to="/parts" />}>Back</button>
       </form>
     </div>
   )

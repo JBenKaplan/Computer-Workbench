@@ -23,9 +23,9 @@ const AllParts = () => {
   return (
     <main>
       <Nav />
-      <p>{parts.type}</p>
       {parts.map((part) => (
         <div key={part._id}>
+          <p>{part.type}</p>
           <img src={part.image} alt="picture" />
           <p>{part.name}</p>
           <p>${part.price}</p>
