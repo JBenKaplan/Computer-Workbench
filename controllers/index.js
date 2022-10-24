@@ -14,6 +14,21 @@ const createWorkBench = async (req, res) => {
   }
 }
 
+const showWorkBench = async (req, res) => {
+  try {
+    const { id } = req.params
+    const bench = await WorkBench.findById(id)
+    if (bench) {
+      return res.status(200).json({ parts })
+    }
+    return res
+      .status(404)
+      .send('Workbench with the specified ID does not exist')
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
 const getAllBenches = async (req, res) => {
   try {
     const benches = await WorkBench.find()
@@ -27,6 +42,17 @@ const joinWorkBench = async (req, res) => {
   try {
     const bench = await WorkBench.find()
     return res.status(200).json({ bench })
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
+const updateBench = async (req, res) => {
+  try {
+    const part = await WorkBench.findByIdAndUpdate(req.params.id, req.body, {
+      new: true
+    })
+    res.status(200).json(part)
   } catch (error) {
     return res.status(500).send(error.message)
   }
@@ -138,8 +164,10 @@ const deletePart = async (req, res) => {
 
 module.exports = {
   createWorkBench,
+  showWorkBench,
   getAllBenches,
   joinWorkBench,
+  updateBench,
   deleteBench,
   createPart,
   partToWorkBench,

@@ -26,7 +26,7 @@ const AllBenches = () => {
       {benches.map((bench) => (
         <div key={bench._id}>
           <h1>Owner: {bench.owner}</h1>
-          <h3>{<Link to={bench._id}>Click To View</Link>}</h3>
+          <h3>{<Link to={`/wb/${bench._id}`}>Click To View</Link>}</h3>
           <h3>Budget: ${bench.budget}</h3>
           <h3>Started: {bench.startDate}</h3>
           <h3>Completion: {bench.goalDate}</h3>

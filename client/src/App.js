@@ -12,6 +12,7 @@ import AllMobo from './pages/AllMobo'
 import AllOther from './pages/AllOther'
 import AllRam from './pages/AllRam'
 import AllBenches from './pages/AllWorkBench'
+import ShowWorkBench from './pages/ShowWorkBench'
 
 const App = () => {
   return (
@@ -31,6 +32,7 @@ const App = () => {
           <Route path="/parts/type/GPU" element={<AllGpu />} />
           <Route path="/parts/type/CASE" element={<AllCase />} />
           <Route path="/parts/type/OTHER" element={<AllOther />} />
+          <Route path="/wb/:id" element={<ShowWorkBench />} />
         </Routes>
       </div>
     </div>
