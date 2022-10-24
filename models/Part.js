@@ -9,8 +9,7 @@ const Part = new Schema(
     brand: { type: String },
     SKU: { type: String },
     inUse: { type: Boolean },
-    image: { type: String },
-    workbench_id: { type: Schema.Types.ObjectId, ref: 'WorkBench' }
+    image: { type: String }
   },
   { timestamps: true }
 )

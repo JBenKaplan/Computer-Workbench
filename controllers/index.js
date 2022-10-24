@@ -2,6 +2,7 @@ const { Part, WorkBench } = require('../models')
 
 //Workbench controllers
 const createWorkBench = async (req, res) => {
+  req.body.budget = parseInt(req.body.budget)
   try {
     const workBench = await new WorkBench(req.body)
     await workBench.save()
@@ -44,10 +45,29 @@ const deleteBench = async (req, res) => {
   }
 }
 
-///Part Controller
+///Part Controllers
 const createPart = async (req, res) => {
+  req.body.price = parseInt(req.body.price)
+  console.log(req.body)
   try {
     const part = await new Part(req.body)
+    await part.save()
+    return res.status(201).json({
+      part
+    })
+  } catch (error) {
+    return res.status(500).json({ error: error.message })
+  }
+}
+
+//add part to workbench by push method here
+const partToWorkBench = async (req, res) => {
+  req.body.workbench_id = { _id: '6356b1f3e18d46f8e2f1ed61' }
+  try {
+    const part = await WorkBench.findByIdAndUpdate(
+      { _id: '6356b1f3e18d46f8e2f1ed61' },
+      { $push: { parts } }
+    )
     await part.save()
     return res.status(201).json({
       part
@@ -122,6 +142,7 @@ module.exports = {
   joinWorkBench,
   deleteBench,
   createPart,
+  partToWorkBench,
   getAllParts,
   getPartById,
   getPartByType,

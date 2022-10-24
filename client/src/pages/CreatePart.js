@@ -1,9 +1,8 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Nav from '../components/Nav'
 
-const CreatePart = (props) => {
+const CreatePart = () => {
   const initialState = {
     name: '',
     type: '',
@@ -11,18 +10,18 @@ const CreatePart = (props) => {
     details: '',
     brand: '',
     SKU: '',
-    misc: '',
+    inUse: false,
     image: '',
-    workbench: ''
+    workbench_id: '635301883715a771bb34208a'
   }
   const [formState, setFormState] = useState(initialState)
 
   const handleSubmit = async (event) => {
+    console.log(formState)
     event.preventDefault()
     let res = await axios.post('http://localhost:3001/parts/create', formState)
-    console.log(res.data)
+    console.log(res)
     setFormState(initialState)
-    props.getIssues()
   }
 
   const handleChange = (event) => {
@@ -35,11 +34,8 @@ const CreatePart = (props) => {
       <h3>Create a New Part</h3>
       <form onSubmit={handleSubmit}>
         <label htmlFor="partType">Type of Part:</label>
-        <select onChange={handleChange} id="partType" value={formState.type}>
-          <option value="" disabled>
-            {' '}
-            - Select Part Type -{' '}
-          </option>
+        <select onChange={handleChange} id="type" value={formState.type}>
+          <option value=""> - Select Part Type - </option>
           <option value="CPU">CPU</option>
           <option value="GPU">GPU</option>
           <option value="MOTHERBOARD">Motherboard</option>
@@ -51,21 +47,21 @@ const CreatePart = (props) => {
         <input
           onChange={handleChange}
           type="text"
-          id="partName"
+          id="name"
           value={formState.name}
         />
         <label htmlFor="partPrice">Part Price USD:</label>
         <input
           onChange={handleChange}
           type="number"
-          id="partPrice"
+          id="price"
           value={formState.price}
         />
         <label htmlFor="partBrand">Brand:</label>
         <input
           onChange={handleChange}
           type="text"
-          id="partBrand"
+          id="brand"
           value={formState.brand}
         />
         <label htmlFor="SKU">SKU:</label>
@@ -75,10 +71,17 @@ const CreatePart = (props) => {
           id="SKU"
           value={formState.SKU}
         />
+        <label htmlFor="Image">Image URL:</label>
+        <input
+          onChange={handleChange}
+          type="text"
+          id="image"
+          value={formState.image}
+        />
         <label htmlFor="partDetails">Details: (separate by | )</label>
         <textarea
           onChange={handleChange}
-          id="partDetails"
+          id="details"
           cols="30"
           rows="10"
           value={formState.details}

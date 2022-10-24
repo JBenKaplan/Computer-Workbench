@@ -2,25 +2,24 @@ import { useState } from 'react'
 import axios from 'axios'
 import Nav from '../components/Nav'
 
-const NewWorkBench = (props) => {
+const NewWorkBench = () => {
   const initialState = {
     owner: '',
     budget: '',
-    dateStarted: '',
+    startDate: '',
     goalDate: ''
   }
   const [formState, setFormState] = useState(initialState)
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
+  const handleSubmit = async (event) => {
+    event.preventDefault()
     let res = await axios.post('http://localhost:3001/wb/create', formState)
     console.log(res.data)
     setFormState(initialState)
-    props.getIssues()
   }
 
-  const handleChange = (e) => {
-    setFormState({ ...formState, [e.target.id]: e.target.value })
+  const handleChange = (event) => {
+    setFormState({ ...formState, [event.target.id]: event.target.value })
   }
 
   return (
@@ -32,7 +31,7 @@ const NewWorkBench = (props) => {
         <input
           onChange={handleChange}
           type="text"
-          id="ownerName"
+          id="owner"
           value={formState.owner}
         />
         <label htmlFor="budget">Budget: if no budget, leave blank</label>
@@ -47,7 +46,7 @@ const NewWorkBench = (props) => {
           onChange={handleChange}
           type="text"
           id="startDate"
-          value={formState.dateStarted}
+          value={formState.startDate}
         />
         <label htmlFor="goalDate">Completion goal: MM/DD/YYYY</label>
         <input

@@ -29,7 +29,7 @@ const AllParts = () => {
           <img src={part.image} alt="picture" />
           <p>{part.name}</p>
           <p>${part.price}</p>
-          <p>{part.details}</p>
+          <p className="detailsList">{part.details}</p>
           <button className="addPart">Add</button>
         </div>
       ))}

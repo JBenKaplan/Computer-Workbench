@@ -27,8 +27,10 @@ const AllBenches = () => {
         <div key={bench._id}>
           <h1>Owner: {bench.owner}</h1>
           <h3>{<Link to={bench._id}>Click To View</Link>}</h3>
-          <h3>Started: {bench.dateStarted}</h3>
+          <h3>Budget: ${bench.budget}</h3>
+          <h3>Started: {bench.startDate}</h3>
           <h3>Completion: {bench.goalDate}</h3>
+          <h3>Parts: {bench.parts}</h3>
         </div>
       ))}
     </main>

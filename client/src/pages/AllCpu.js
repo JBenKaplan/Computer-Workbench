@@ -19,6 +19,13 @@ const AllParts = () => {
     getParts()
   }, [])
 
+  const addToBench = () => {
+    // partToWorkBench(parts)
+    {
+      /* findByIdAndUpdate and $push into workbench by ID */
+    }
+  }
+
   return (
     <main>
       <Nav />
@@ -28,8 +35,10 @@ const AllParts = () => {
             <img src={part.image} alt="picture" />
             <p>{part.name}</p>
             <p>${part.price}</p>
-            <p>{part.details}</p>
-            <button className="addCPU">Add CPU</button>
+            <p className="detailsList">{part.details}</p>
+            <button className="addCPU" onClick={addToBench}>
+              Add CPU
+            </button>
           </div>
         ))}
       </div>
