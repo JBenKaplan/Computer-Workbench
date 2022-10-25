@@ -18,8 +18,8 @@ const Home = (props) => {
     }
   }
 
-  const goToBench = async (key) => {
-    navigate(`/wb/${key}`)
+  const goToBench = async (id) => {
+    navigate(`/wb/${id}`)
   }
 
   useEffect(() => {
@@ -29,10 +29,16 @@ const Home = (props) => {
   return (
     <main>
       <Nav />
+
       <h1>Choose WorkBench</h1>
       <div className="workBenches">
         {benches.map((bench) => (
-          <div key={bench._id} className="bench" onClick={goToBench}>
+          <div
+            key={bench._id}
+            id={bench._id}
+            className="bench"
+            onClick={() => goToBench(bench._id)}
+          >
             <img src={bench.image} alt="benchPic" className="benchPic" />
             <h3>{bench.owner}</h3>
             <h3>Budget: ${bench.budget}</h3>
