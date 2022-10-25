@@ -44,10 +44,6 @@ code {
     monospace;
 }
 
-.CPU .GPU .RAM .MOTHERBOARD .CASE .APP_PART {
-  border: black solid 2px;
-}
-
 img {
   width: 200px;
   height: 200px;
@@ -64,19 +60,36 @@ img {
 
 .workBenches {
   display: flex;
-  width: 800px;
-  height: 370px;
   justify-content: space-between;
+  align-items: center;
 }
 
 .bench {
   margin: 5px 5px;
   padding: 10px;
-  border: black solid 1px;
+}
+
+.benchInfo {
+  border: black 2px solid;
 }
 
 .benchPic {
   min-height: 200px;
   min-height: 200px;
   border: rgba(5, 78, 150, 0.701) solid 5px;
+}
+
+.workBenchList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+table {
+  width: 80vw;
+}
+
+td {
+  border: black solid 2px;
+  justify-content: space-evenly;
 }

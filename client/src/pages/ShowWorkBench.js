@@ -13,7 +13,6 @@ const ShowWorkBench = () => {
   const getParts = async (req, res) => {
     try {
       let res = await axios.get(`http://localhost:3001/wb/${id}`)
-      console.log(res.data.bench.parts)
       setParts(res.data.bench.parts)
       setBudget(res.data.bench.budget)
     } catch (err) {
@@ -35,6 +34,16 @@ const ShowWorkBench = () => {
     }
   }
 
+  const removePart = async (req, res) => {
+    try {
+      let res = await axios.get(`http://localhost:3001/wb/${id}`)
+      setParts(res.data.bench.parts)
+      setBudget(res.data.bench.budget)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
   useEffect(() => {
     getParts()
     getCost()
@@ -47,13 +56,33 @@ const ShowWorkBench = () => {
         <p className="budget">Total Budget: ${budget}</p>
         <p className="totalCost">Total Cost: ${cost}</p>
       </div>
-      <div className="wbAll">
+      <div className="workBenchList">
         {parts.map((part) => (
           <div key={part._id}>
-            <img src={part.image} alt="picture" />
-            <p>{part.name}</p>
-            <p>${part.price}</p>
-            <p className="detailsList">{part.details}</p>
+            <table>
+              <tbody>
+                <tr>
+                  <td className="partPicture">
+                    <img src={part.image} alt="picture" />
+                  </td>
+                  <td className="partName">
+                    <p>{part.name}</p>
+                  </td>
+                  <td className="partPrice">
+                    <p>${part.price}</p>
+                  </td>
+                  <td>
+                    <p className="detailsList">{part.details}</p>
+                  </td>
+                  <td>
+                    <button className="editPart">Edit</button>
+                  </td>
+                  <td>
+                    <button className="removePart">Remove</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         ))}
       </div>
