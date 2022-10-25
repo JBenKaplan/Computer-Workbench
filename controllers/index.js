@@ -95,7 +95,7 @@ const createPart = async (req, res) => {
 const addPartToBench = async (req, res) => {
   try {
     const bench = await WorkBench.findByIdAndUpdate(req.params.id, {
-      $push: { parts: req.params.part_id }
+      $push: { parts: req.params.part._id }
     })
     return res.status(202).send(bench)
   } catch (error) {
