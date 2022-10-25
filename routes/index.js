@@ -11,11 +11,11 @@ router.put('/parts/:id', controllers.updatePart)
 router.post('/parts/create', controllers.createPart)
 router.delete('/parts/:id', controllers.deletePart)
 
-router.put('/wb/:id/:part_id', controllers.addPartToBench)
 router.get('/wb/all', controllers.getAllBenches)
-router.get(`/wb/:id`, controllers.showWorkBench)
+router.get(`/wb/:id`, controllers.showPartsInBench)
 router.post('/wb/create', controllers.createWorkBench)
-router.put('/wb/:id', controllers.updateBench)
-router.delete('/wb/:id', controllers.deleteBench)
+router.put('/wb/:wb_id/:part_id', controllers.addPartToBench)
+router.put('/wb/:wb_id', controllers.updateBench)
+router.delete('/wb/:wb_id', controllers.deleteBench)
 
 module.exports = router

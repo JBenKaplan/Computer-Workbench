@@ -34,7 +34,7 @@ const showPartsInBench = async (req, res) => {
     const { id } = req.params
     const bench = await WorkBench.findById(id).populate('parts')
     if (bench) {
-      return res.status(200).json({ parts })
+      return res.status(200).json({ bench })
     }
     return res
       .status(404)

@@ -1,17 +1,17 @@
-import Nav from '../components/Nav'
 import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
+import Nav from '../components/Nav'
 import axios from 'axios'
 
 const ShowWorkBench = () => {
   const [parts, setParts] = useState([])
 
+  const { id } = useParams()
   const getParts = async (req, res) => {
-    let id = req
     try {
       let res = await axios.get(`http://localhost:3001/wb/${id}`)
-      console.log(req)
-      console.log(res)
-      setParts(res.data.part)
+      console.log(res.data.bench.parts)
+      setParts(res.data.bench.parts)
     } catch (err) {
       console.log(err)
     }
