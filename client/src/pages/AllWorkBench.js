@@ -10,7 +10,6 @@ const AllBenches = () => {
   const getBenches = async () => {
     try {
       let res = await axios.get('http://localhost:3001/wb/all')
-      console.log(res.data.benches)
       setBenches(res.data.benches)
     } catch (err) {
       console.log(err)

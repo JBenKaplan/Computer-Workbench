@@ -15,8 +15,21 @@ const ShowWorkBench = () => {
       let res = await axios.get(`http://localhost:3001/wb/${id}`)
       console.log(res.data.bench.parts)
       setParts(res.data.bench.parts)
-      setCost(res.data.bench.parts.price)
       setBudget(res.data.bench.budget)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  const getCost = async (req, res) => {
+    try {
+      let res = await axios.get(`http://localhost:3001/wb/${id}`)
+      let part = res.data.bench.parts
+      let price = 0
+      for (let i = 0; i < part.length; i++) {
+        price += part[i].price
+      }
+      setCost(price)
     } catch (err) {
       console.log(err)
     }
@@ -24,13 +37,16 @@ const ShowWorkBench = () => {
 
   useEffect(() => {
     getParts()
+    getCost()
   }, [])
 
   return (
     <main>
       <Nav />
-      <p className="budget">Total Budget: ${budget}</p>
-      <p className="totalCost">Total Cost: ${cost}</p>
+      <div className="money">
+        <p className="budget">Total Budget: ${budget}</p>
+        <p className="totalCost">Total Cost: ${cost}</p>
+      </div>
       <div className="wbAll">
         {parts.map((part) => (
           <div key={part._id}>
