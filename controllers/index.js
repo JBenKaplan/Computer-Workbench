@@ -29,6 +29,21 @@ const showWorkBench = async (req, res) => {
   }
 }
 
+const showPartsInBench = async (req, res) => {
+  try {
+    const { id } = req.params
+    const bench = await WorkBench.findById(id).populate('parts')
+    if (bench) {
+      return res.status(200).json({ parts })
+    }
+    return res
+      .status(404)
+      .send('Workbench with the specified ID does not exist')
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
 const getAllBenches = async (req, res) => {
   try {
     const benches = await WorkBench.find()
@@ -49,9 +64,8 @@ const joinWorkBench = async (req, res) => {
 
 const updateBench = async (req, res) => {
   try {
-    const part = await WorkBench.findByIdAndUpdate(req.params.id, req.body, {
-      new: true
-    })
+    const { id } = req.params
+    const part = await WorkBench.findById(id).populate('part')
     res.status(200).json(part)
   } catch (error) {
     return res.status(500).send(error.message)
@@ -88,15 +102,14 @@ const createPart = async (req, res) => {
 
 //add part to workbench by push method here
 const partToWorkBench = async (req, res) => {
-  req.body.workbench_id = { _id: '6356b1f3e18d46f8e2f1ed61' }
   try {
-    const part = await WorkBench.findByIdAndUpdate(
+    const bench = await WorkBench.findByIdAndUpdate(
       { _id: '6356b1f3e18d46f8e2f1ed61' },
-      { $push: { parts } }
+      { $push: { part } }
     )
-    await part.save()
+    await bench.save()
     return res.status(201).json({
-      part
+      bench
     })
   } catch (error) {
     return res.status(500).json({ error: error.message })
@@ -164,6 +177,7 @@ const deletePart = async (req, res) => {
 
 module.exports = {
   createWorkBench,
+  showPartsInBench,
   showWorkBench,
   getAllBenches,
   joinWorkBench,

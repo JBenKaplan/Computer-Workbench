@@ -60,3 +60,8 @@ img {
   width: 250px;
   align-items: center;
 }
+
+.workBenches {
+  width: 400px;
+  height: 400px;
+}

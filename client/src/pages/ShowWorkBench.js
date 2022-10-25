@@ -6,10 +6,10 @@ const ShowWorkBench = () => {
   const [parts, setParts] = useState([])
 
   const getParts = async (req, res) => {
-    console.log(req)
-    let id = req.id
+    let id = req
     try {
       let res = await axios.get(`http://localhost:3001/wb/${id}`)
+      console.log(req)
       console.log(res)
       setParts(res.data.part)
     } catch (err) {

@@ -15,16 +15,36 @@ const AllParts = () => {
     }
   }
 
-  useEffect(() => {
-    getParts()
-  }, [])
-
-  const addToBench = () => {
+  const addToBench = async (req, res) => {
     // partToWorkBench(parts)
     {
       /* findByIdAndUpdate and $push into workbench by ID */
     }
+    try {
+      let res = await axios.post(
+        `http://localhost:3001/wb/6356b1f3e18d46f8e2f1ed61`
+      )
+      console.log(res.data.part)
+    } catch (err) {
+      console.log(err)
+    }
   }
+
+  const deleteCPU = async (req, res) => {
+    try {
+      let id = req.params
+      let res = await axios.delete(`http://localhost:3001/parts/${id}`)
+      console.log(res.data.part)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  useEffect(() => {
+    getParts()
+    addToBench()
+    deleteCPU()
+  }, [])
 
   return (
     <main>
@@ -38,6 +58,9 @@ const AllParts = () => {
             <p className="detailsList">{part.details}</p>
             <button className="addCPU" onClick={addToBench}>
               Add CPU
+            </button>
+            <button className="removeCPU" onClick={deleteCPU}>
+              Delete CPU
             </button>
           </div>
         ))}
