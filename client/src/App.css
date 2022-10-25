@@ -1,7 +1,8 @@
 .navbar {
   display: flex;
   justify-content: space-between;
-  margin: 0 20px;
+  margin: 0 auto;
+  background-color: #74747485;
 }
 
 .partsButtons {
@@ -62,6 +63,16 @@ img {
 }
 
 .workBenches {
-  width: 400px;
-  height: 400px;
+  display: flex;
+  width: 800px;
+  height: 500px;
+}
+
+.bench {
+  padding: 30px;
+}
+
+.benchPic {
+  height: 200px;
+  width: 300px;
 }

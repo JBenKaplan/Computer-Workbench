@@ -65,8 +65,8 @@ const joinWorkBench = async (req, res) => {
 const updateBench = async (req, res) => {
   try {
     const { id } = req.params
-    const part = await WorkBench.findById(id).populate('part')
-    res.status(200).json(part)
+    const bench = await WorkBench.findByIdAndUpdate(id, req.body, { new: true })
+    res.status(200).json({ bench })
   } catch (error) {
     return res.status(500).send(error.message)
   }

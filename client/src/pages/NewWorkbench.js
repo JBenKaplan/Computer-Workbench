@@ -6,8 +6,7 @@ const NewWorkBench = () => {
   const initialState = {
     owner: '',
     budget: '',
-    startDate: '',
-    goalDate: ''
+    image: ''
   }
   const [formState, setFormState] = useState(initialState)
 
@@ -27,7 +26,7 @@ const NewWorkBench = () => {
       <Nav />
       <h2>Create your Workbench</h2>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="owner">Owner:</label>
+        <label htmlFor="owner">Name:</label>
         <input
           onChange={handleChange}
           type="text"
@@ -41,19 +40,12 @@ const NewWorkBench = () => {
           id="budget"
           value={formState.budget}
         />
-        <label htmlFor="startDate">Today's date: MM/DD/YYYY</label>
+        <label htmlFor="image">Image URL</label>
         <input
           onChange={handleChange}
           type="text"
-          id="startDate"
-          value={formState.startDate}
-        />
-        <label htmlFor="goalDate">Completion goal: MM/DD/YYYY</label>
-        <input
-          onChange={handleChange}
-          type="text"
-          id="goalDate"
-          value={formState.goalDate}
+          id="image"
+          value={formState.image}
         />
         <button type="submit">Send</button>
       </form>

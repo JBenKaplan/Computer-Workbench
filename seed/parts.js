@@ -28,7 +28,11 @@ const main = async () => {
       inUse: true,
       image:
         'https://imgs.search.brave.com/rInZ-nEcbTDvPraiBje7rd5rOgV4c-V8p2aMQeXdDKk/rs:fit:1000:1000:1/g:ce/aHR0cHM6Ly9kZHRl/Y2gubXgvYXNzZXRz/L3VwbG9hZHMvMDc3/OTdhZmNmNzUzMTU2/NDViNzY3Nzg4ZjU2/NjI1OTQuanBn'
-    }
+    },
+    {},
+    {},
+    {},
+    {}
   ]
 
   await Part.insertMany(parts)

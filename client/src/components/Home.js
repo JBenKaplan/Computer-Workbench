@@ -26,11 +26,10 @@ const Home = (props) => {
       <h1>Choose WorkBench</h1>
       <div className="workBenches">
         {benches.map((bench) => (
-          <div key={bench._id}>
-            <h2>{bench.owner}</h2>
+          <div key={bench._id} className="bench">
+            <img src={bench.image} alt="benchPic" className="benchPic" />
+            <h3>{bench.owner}</h3>
             <h3>Budget: ${bench.budget}</h3>
-            <h3>Started: {bench.startDate}</h3>
-            <h3>Completion: {bench.goalDate}</h3>
           </div>
         ))}
       </div>
