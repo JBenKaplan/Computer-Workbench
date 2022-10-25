@@ -25,7 +25,7 @@ const NewWorkBench = () => {
     <main>
       <Nav />
       <h2>Create your Workbench</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="newBench">
         <label htmlFor="owner">Name:</label>
         <input
           onChange={handleChange}

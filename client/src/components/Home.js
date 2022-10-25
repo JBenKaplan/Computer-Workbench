@@ -45,6 +45,7 @@ const Home = (props) => {
           </div>
         ))}
       </div>
+      <Link to="/wb/create">New Bench</Link>
     </main>
   )
 }

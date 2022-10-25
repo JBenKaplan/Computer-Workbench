@@ -103,6 +103,17 @@ const addPartToBench = async (req, res) => {
   }
 }
 
+const removePartFromBench = async (req, res) => {
+  try {
+    const bench = await WorkBench.findByIdAndUpdate(req.params.id, {
+      $slice: { parts: req.params.part_id }
+    })
+    return res.status(202).send(bench)
+  } catch (error) {
+    return res.status(500).json({ error: error.message })
+  }
+}
+
 const getAllParts = async (req, res) => {
   try {
     const parts = await Part.find()
@@ -171,6 +182,7 @@ module.exports = {
   deleteBench,
   createPart,
   addPartToBench,
+  removePartFromBench,
   getAllParts,
   getPartById,
   getPartByType,

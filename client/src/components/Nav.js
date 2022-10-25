@@ -1,13 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const Nav = () => {
+  const navigate = useNavigate()
+
   return (
     <nav className="navbar">
-      <Link to="/">Home</Link>
-      <Link to="/parts/all">All Parts</Link>
-      <Link to="/parts/create">New Part</Link>
-      <Link to="/wb/create">New Bench</Link>
+      <button onClick={() => navigate('/')}>Home</button>
+      <button onClick={() => navigate('/parts/all')}>All Parts</button>
+      <button onClick={() => navigate('/parts/create')}>Create a Part</button>
     </nav>
   )
 }
