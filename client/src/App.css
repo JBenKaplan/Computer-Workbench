@@ -89,7 +89,35 @@ table {
   width: 80vw;
 }
 
-td {
+tbody {
+  height: 200px;
+}
+
+.partPicure,
+.partName,
+.partPrice {
+  width: 200px;
+}
+
+.editPart,
+.removePart {
+  width: 100px;
+}
+
+.partButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+tr {
   border: black solid 2px;
-  justify-content: space-evenly;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+td {
+  align-items: center;
+  justify-content: space-around;
 }

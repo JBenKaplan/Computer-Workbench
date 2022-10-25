@@ -25,12 +25,27 @@ const AllParts = () => {
       <Nav />
       {parts.map((part) => (
         <div key={part._id}>
-          <p>{part.type}</p>
-          <img src={part.image} alt="picture" />
-          <p>{part.name}</p>
-          <p>${part.price}</p>
-          <p className="detailsList">{part.details}</p>
-          <button className="addPart">Add</button>
+          <table>
+            <tbody>
+              <tr>
+                <td className="partPicture">
+                  <img src={part.image} alt="picture" />
+                </td>
+                <td className="partName">
+                  <p>{part.name}</p>
+                </td>
+                <td className="partPrice">
+                  <p>${part.price}</p>
+                </td>
+                <td>
+                  <p className="detailsList">{part.details}</p>
+                </td>
+                <td className="partButtons">
+                  <button className="addPart">Add</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       ))}
     </main>

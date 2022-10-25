@@ -74,10 +74,8 @@ const ShowWorkBench = () => {
                   <td>
                     <p className="detailsList">{part.details}</p>
                   </td>
-                  <td>
+                  <td className="partButtons">
                     <button className="editPart">Edit</button>
-                  </td>
-                  <td>
                     <button className="removePart">Remove</button>
                   </td>
                 </tr>
