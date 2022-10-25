@@ -32,7 +32,7 @@ const CreatePart = () => {
     <div>
       <Nav />
       <h3>Create a New Part</h3>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="newPart">
         <label htmlFor="partType">Type of Part:</label>
         <select onChange={handleChange} id="type" value={formState.type}>
           <option value=""> - Select Part Type - </option>

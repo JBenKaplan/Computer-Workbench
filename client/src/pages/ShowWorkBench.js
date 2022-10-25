@@ -62,8 +62,12 @@ const ShowWorkBench = () => {
             <table>
               <tbody>
                 <tr>
-                  <td className="partPicture">
-                    <img src={part.image} alt="picture" />
+                  <td>
+                    <img
+                      className="partPicture"
+                      src={part.image}
+                      alt="picture"
+                    />
                   </td>
                   <td className="partName">
                     <p>{part.name}</p>
