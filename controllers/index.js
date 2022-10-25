@@ -91,17 +91,13 @@ const createPart = async (req, res) => {
   }
 }
 
-//add part to workbench by push method here
+//add part to workbench
 const addPartToBench = async (req, res) => {
   try {
-    const bench = await WorkBench.findByIdAndUpdate(
-      '6356b1f3e18d46f8e2f1ed61',
-      { $push: { parts: req.params.part_id } }
-    )
-    await bench.save()
-    return res.status(201).json({
-      bench
+    const bench = await WorkBench.findByIdAndUpdate(req.params.id, {
+      $push: { parts: req.params.part_id }
     })
+    return res.status(202).send(bench)
   } catch (error) {
     return res.status(500).json({ error: error.message })
   }
