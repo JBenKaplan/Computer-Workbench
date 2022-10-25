@@ -1,10 +1,12 @@
 import Nav from './Nav'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 const Home = (props) => {
   const [benches, setBenches] = useState([])
+
+  let navigate = useNavigate()
 
   const getBenches = async () => {
     try {
@@ -14,6 +16,10 @@ const Home = (props) => {
     } catch (err) {
       console.log(err)
     }
+  }
+
+  const goToBench = async (key) => {
+    navigate(`/wb/${key}`)
   }
 
   useEffect(() => {
@@ -26,7 +32,7 @@ const Home = (props) => {
       <h1>Choose WorkBench</h1>
       <div className="workBenches">
         {benches.map((bench) => (
-          <div key={bench._id} className="bench">
+          <div key={bench._id} className="bench" onClick={goToBench}>
             <img src={bench.image} alt="benchPic" className="benchPic" />
             <h3>{bench.owner}</h3>
             <h3>Budget: ${bench.budget}</h3>

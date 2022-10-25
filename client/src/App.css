@@ -65,14 +65,18 @@ img {
 .workBenches {
   display: flex;
   width: 800px;
-  height: 500px;
+  height: 370px;
+  justify-content: space-between;
 }
 
 .bench {
-  padding: 30px;
+  margin: 5px 5px;
+  padding: 10px;
+  border: black solid 1px;
 }
 
 .benchPic {
-  height: 200px;
-  width: 200px;
+  min-height: 200px;
+  min-height: 200px;
+  border: rgba(5, 78, 150, 0.701) solid 5px;
 }

@@ -53,15 +53,6 @@ const getAllBenches = async (req, res) => {
   }
 }
 
-const joinWorkBench = async (req, res) => {
-  try {
-    const bench = await WorkBench.find()
-    return res.status(200).json({ bench })
-  } catch (error) {
-    return res.status(500).send(error.message)
-  }
-}
-
 const updateBench = async (req, res) => {
   try {
     const { id } = req.params
@@ -101,11 +92,11 @@ const createPart = async (req, res) => {
 }
 
 //add part to workbench by push method here
-const partToWorkBench = async (req, res) => {
+const addPartToBench = async (req, res) => {
   try {
     const bench = await WorkBench.findByIdAndUpdate(
-      { _id: '6356b1f3e18d46f8e2f1ed61' },
-      { $push: { part } }
+      '6356b1f3e18d46f8e2f1ed61',
+      { $push: { parts: req.params.part_id } }
     )
     await bench.save()
     return res.status(201).json({
@@ -180,11 +171,10 @@ module.exports = {
   showPartsInBench,
   showWorkBench,
   getAllBenches,
-  joinWorkBench,
   updateBench,
   deleteBench,
   createPart,
-  partToWorkBench,
+  addPartToBench,
   getAllParts,
   getPartById,
   getPartByType,
