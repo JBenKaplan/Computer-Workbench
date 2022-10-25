@@ -16,10 +16,6 @@ const AllParts = () => {
   }
 
   const addToBench = async (req, res) => {
-    // partToWorkBench(parts)
-    {
-      /* findByIdAndUpdate and $push into workbench by ID */
-    }
     try {
       let res = await axios.post(
         `http://localhost:3001/wb/6356b1f3e18d46f8e2f1ed61`

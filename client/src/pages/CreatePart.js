@@ -12,7 +12,7 @@ const CreatePart = () => {
     SKU: '',
     inUse: false,
     image: '',
-    workbench_id: '635301883715a771bb34208a'
+    workbench_id: ''
   }
   const [formState, setFormState] = useState(initialState)
 
