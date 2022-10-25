@@ -3,19 +3,8 @@ import axios from 'axios'
 
 const PartTable = (props) => {
   const initialState = { workbench_id: '' }
-  const [parts, setParts] = useState([])
   const [formState, setFormState] = useState(initialState)
   const [workbenches, setWorkBenches] = useState([])
-
-  const getParts = async () => {
-    try {
-      let res = await axios.get('http://localhost:3001/parts/all')
-
-      setParts(res.data.parts)
-    } catch (err) {
-      console.log(err)
-    }
-  }
 
   const getBenches = async () => {
     try {
@@ -29,7 +18,7 @@ const PartTable = (props) => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     let res = await axios.put(
-      `http://localhost:3001/wb/${formState.workbench_id}/${parts.part.id}`,
+      `http://localhost:3001/wb/${formState.workbench_id}/${props.part._id}`,
       formState
     )
     console.log('submitted')
@@ -42,7 +31,6 @@ const PartTable = (props) => {
   }
 
   useEffect(() => {
-    getParts()
     getBenches()
   }, [])
 
@@ -64,7 +52,7 @@ const PartTable = (props) => {
           </td>
           <td className="partButtons">
             <form onSubmit={handleSubmit} className="addPart">
-              <label htmlFor="addWorkbench">Choose Workbench:</label>
+              <label htmlFor="addWorkbench"></label>
               <select
                 onChange={handleChange}
                 id="workbench_id"
@@ -79,8 +67,8 @@ const PartTable = (props) => {
                   </option>
                 ))}
               </select>
+              <button type="submit">Add to Workbench</button>
             </form>
-            <button type="submit">Add to Workbench</button>
           </td>
         </tr>
       </tbody>
