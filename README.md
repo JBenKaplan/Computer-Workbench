@@ -42,6 +42,8 @@ This application will allow you to build computers either within certain price r
 
 ---
 
+[Icons](https://icons8.com/icons) |
+
 ### Future Updates
 
 ---

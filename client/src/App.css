@@ -55,13 +55,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #3e4c8e9a;
+  background-color: #3e4b8ea1;
   margin: 0 auto 10px auto;
+  border: rgb(5, 77, 150) solid 3px;
 }
+
 Nav {
   display: flex;
   flex-direction: column;
 }
+
 body {
   text-align: center;
   background-color: rgba(5, 78, 150, 0.701);
