@@ -48,4 +48,6 @@ This application will allow you to build computers either within certain price r
 
 ---
 
-- [ ]
+- [ ] Login ability
+- [ ] Auto populate part data from url
+- [ ] More parts in list
