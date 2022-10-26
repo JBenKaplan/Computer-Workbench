@@ -2,6 +2,7 @@ import Nav from '../components/Nav'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
+import PartTable from '../components/PartTable'
 
 const AllParts = () => {
   const [parts, setParts] = useState([])
@@ -24,7 +25,14 @@ const AllParts = () => {
   return (
     <main>
       <Nav />
-      <div className="partList">
+      <div className="allParts">
+        {parts.map((part) => (
+          <div key={part._id}>
+            <PartTable part={part} />
+          </div>
+        ))}
+      </div>
+      {/* <div className="partList">
         {parts.map((part) => (
           <div key={part._id}>
             <img src={part.image} alt="picture" />
@@ -34,7 +42,7 @@ const AllParts = () => {
             <button className="addPart">Add</button>
           </div>
         ))}
-      </div>
+      </div> */}
     </main>
   )
 }

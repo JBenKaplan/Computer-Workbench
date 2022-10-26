@@ -1,7 +1,7 @@
 import Nav from '../components/Nav'
 import { useState, useEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
-import { Route, Routes } from 'react-router-dom'
 import PartTable from '../components/PartTable'
 
 const AllParts = () => {
@@ -9,6 +9,8 @@ const AllParts = () => {
   const [parts, setParts] = useState([])
   const [formState, setFormState] = useState(initialState)
   const [workbenches, setWorkBenches] = useState([])
+
+  const navigate = useNavigate()
 
   const getParts = async () => {
     try {
@@ -19,29 +21,21 @@ const AllParts = () => {
     }
   }
 
-  const getBenches = async () => {
-    try {
-      let res = await axios.get('http://localhost:3001/wb/all')
-      setWorkBenches(res.data.benches)
-    } catch (err) {
-      console.log(err)
-    }
-  }
-
   useEffect(() => {
     getParts()
-    getBenches()
   }, [])
 
   return (
     <main>
       <Nav />
-      <div className="allParts">
-        {parts.map((part) => (
-          <div key={part._id}>
-            <PartTable part={part} />
-          </div>
-        ))}
+      <div className="partLinks">
+        <Link to="/parts/type/cpu">CPUs</Link>
+        <Link to="/parts/type/gpu">GPUs</Link>
+        <Link to="/parts/type/ram">RAM</Link>
+        <Link to="/parts/type/motherboard">Motherboards</Link>
+        <Link to="/parts/type/case">Cases</Link>
+        <Link to="/parts/type/other">Other parts</Link>
+        <Link to="/parts/create">Create a part</Link>
       </div>
     </main>
   )

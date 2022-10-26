@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import Nav from '../components/Nav'
 import axios from 'axios'
 
@@ -11,13 +11,15 @@ const ShowWorkBench = () => {
 
   const { id } = useParams()
 
+  const navigate = useNavigate()
+
   const getParts = async (req, res) => {
     try {
       let res = await axios.get(`http://localhost:3001/wb/${id}`)
       let benchCreated = res.data.bench.userCreated
       setParts(res.data.bench.parts)
       setBudget(res.data.bench.budget)
-      setBenchCreated(res.data.bench.userCreated)
+      setBenchCreated(benchCreated)
     } catch (err) {
       console.log(err)
     }
@@ -42,6 +44,7 @@ const ShowWorkBench = () => {
       if (window.confirm('Are you sure you want to delete this workbench?')) {
         let res = await axios.delete(`http://localhost:3001/wb/${id}`)
         alert('Workbench Deleted')
+        navigate('/')
       }
     } catch (err) {
       console.log(err)
@@ -50,7 +53,7 @@ const ShowWorkBench = () => {
 
   const removePart = async (req, res) => {
     try {
-      let res = await axios.put(`http://localhost:3001/wb/${id}`)
+      let res = await axios.put(`http://localhost:3001/wb/${id}/`)
       console.log('Part removed')
     } catch (err) {
       console.log(err)

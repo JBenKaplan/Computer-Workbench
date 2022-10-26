@@ -24,15 +24,15 @@ const App = () => {
           <Route path="/parts" element={<WorkBench />} />
           <Route path="/parts/create" element={<CreatePart />} />
           <Route path="/wb/all" element={<AllBenches />} />
+          <Route path="/wb/:id" element={<ShowWorkBench />} />
           <Route path="/wb/create" element={<NewWorkBench />} />
           <Route path="/parts/all" element={<AllParts />} />
+          <Route path="/parts/type/:id" element={<AllCase />} />
           {/* <Route path="/parts/type/CPU" element={<AllCpu />} /> */}
           {/* <Route path="/parts/type/MOTHERBOARD" element={<AllMobo />} /> */}
           {/* <Route path="/parts/type/RAM" element={<AllRam />} /> */}
           {/* <Route path="/parts/type/GPU" element={<AllGpu />} /> */}
-          <Route path="/parts/type/:id" element={<AllCase />} />
           {/* <Route path="/parts/type/OTHER" element={<AllOther />} /> */}
-          <Route path="/wb/:id" element={<ShowWorkBench />} />
         </Routes>
       </div>
     </div>
