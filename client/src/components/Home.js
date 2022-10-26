@@ -43,8 +43,16 @@ const Home = (props) => {
             <h3>Budget: ${bench.budget}</h3>
           </div>
         ))}
+        <div className="new-workbench">
+          <Link to="/wb/create">
+            <img
+              src="https://img.icons8.com/external-nawicon-detailed-outline-nawicon/344/external-desk-bedroom-nawicon-detailed-outline-nawicon.png"
+              alt="new-workbench"
+            />
+          </Link>
+          New Bench
+        </div>
       </div>
-      <Link to="/wb/create">New Bench</Link>
     </main>
   )
 }

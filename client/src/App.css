@@ -36,9 +36,24 @@
   height: 200px;
   width: 200px;
   align-items: center;
-  flex-direction: column;
   margin: 0 auto;
-  justify-content: space-evenly;
+}
+
+.workbenches-list {
+  display: flex;
+  width: 80vw;
+  height: 80vh;
+  margin: 0 auto;
+  padding: 20px;
+  flex-flow: wrap row;
+}
+
+.wbcard {
+  display: flex;
+  height: 200px;
+  width: 200px;
+  align-items: center;
+  margin: 0 auto;
 }
 
 header {
@@ -86,11 +101,19 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 90vw;
+  margin: 0 auto;
+  flex-flow: wrap row;
 }
 
+.new-workbench {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 220px;
+}
 .bench {
   margin: 5px 5px;
-  padding: 10px;
 }
 
 .benchInfo {
@@ -135,7 +158,9 @@ tbody {
 }
 
 tr {
-  border: rgba(29, 43, 55, 0.62) solid 2px;
+  border: rgba(29, 43, 55, 0.25) solid 2px;
+  background-color: rgba(17, 25, 33, 0.5);
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
