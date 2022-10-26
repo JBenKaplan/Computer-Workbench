@@ -75,7 +75,7 @@ img {
 }
 
 .benchInfo {
-  border: black 2px solid;
+  border: rgba(66, 84, 101, 0.62) 2px solid;
 }
 
 .benchPic {
@@ -116,7 +116,7 @@ tbody {
 }
 
 tr {
-  border: black solid 2px;
+  border: rgba(29, 43, 55, 0.62) solid 2px;
   display: flex;
   justify-content: center;
   align-items: center;

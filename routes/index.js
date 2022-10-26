@@ -17,6 +17,6 @@ router.put('/wb/:id/:part_id', controllers.removePartFromBench)
 router.get(`/wb/:id`, controllers.showPartsInBench)
 router.post('/wb/create', controllers.createWorkBench)
 router.put('/wb/:id', controllers.updateBench)
-router.delete('/wb/:wb_id', controllers.deleteBench)
+router.delete('/wb/:id', controllers.deleteBench)
 
 module.exports = router

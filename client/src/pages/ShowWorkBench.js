@@ -7,14 +7,17 @@ const ShowWorkBench = () => {
   const [parts, setParts] = useState([])
   const [cost, setCost] = useState(0)
   const [budget, setBudget] = useState(0)
+  const [benchCreated, setBenchCreated] = useState(false)
 
   const { id } = useParams()
 
   const getParts = async (req, res) => {
     try {
       let res = await axios.get(`http://localhost:3001/wb/${id}`)
+      let benchCreated = res.data.bench.userCreated
       setParts(res.data.bench.parts)
       setBudget(res.data.bench.budget)
+      setBenchCreated(res.data.bench.userCreated)
     } catch (err) {
       console.log(err)
     }
@@ -34,11 +37,21 @@ const ShowWorkBench = () => {
     }
   }
 
+  const deleteWorkbench = async (req, res) => {
+    try {
+      if (window.confirm('Are you sure you want to delete this workbench?')) {
+        let res = await axios.delete(`http://localhost:3001/wb/${id}`)
+        alert('Workbench Deleted')
+      }
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
   const removePart = async (req, res) => {
     try {
-      let res = await axios.get(`http://localhost:3001/wb/${id}`)
-      setParts(res.data.bench.parts)
-      setBudget(res.data.bench.budget)
+      let res = await axios.put(`http://localhost:3001/wb/${id}`)
+      console.log('Part removed')
     } catch (err) {
       console.log(err)
     }
@@ -55,6 +68,11 @@ const ShowWorkBench = () => {
       <div className="money">
         <p className="budget">Total Budget: ${budget}</p>
         <p className="totalCost">Total Cost: ${cost}</p>
+      </div>
+      <div className="deleteWorkbench">
+        {!benchCreated ? null : (
+          <button onClick={() => deleteWorkbench()}>Delete Workbench</button>
+        )}
       </div>
       <div className="workBenchList">
         {parts.map((part) => (
@@ -79,7 +97,6 @@ const ShowWorkBench = () => {
                     <p className="detailsList">{part.details}</p>
                   </td>
                   <td className="partButtons">
-                    <button className="editPart">Edit</button>
                     <button className="removePart">Remove</button>
                   </td>
                 </tr>

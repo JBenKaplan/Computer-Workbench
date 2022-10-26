@@ -6,7 +6,8 @@ const NewWorkBench = () => {
   const initialState = {
     owner: '',
     budget: '',
-    image: ''
+    image: '',
+    userCreated: true
   }
   const [formState, setFormState] = useState(initialState)
 
