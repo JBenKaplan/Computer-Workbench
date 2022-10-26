@@ -24,6 +24,17 @@
 
 .partLink {
   display: flex;
+  height: 200px;
+  width: 200px;
+  align-items: center;
+  margin: 0 auto;
+  justify-content: space-evenly;
+}
+
+.partLinks {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
 }
 
 header {

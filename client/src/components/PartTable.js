@@ -42,7 +42,8 @@ const PartTable = (props) => {
             <img className="partPicture" src={props.part.image} alt="picture" />
           </td>
           <td className="partName">
-            <p>{props.part.name}</p>
+            <p> {props.part.brand}</p>
+            <p> {props.part.name}</p>
           </td>
           <td className="partPrice">
             <p>${props.part.price}</p>

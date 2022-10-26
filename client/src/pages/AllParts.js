@@ -28,29 +28,53 @@ const AllParts = () => {
   return (
     <main>
       <Nav />
-      {/* <div className="partLinks"> */}
-      <Link className="partLink" to="/parts/type/cpu">
-        CPUs
-      </Link>
-      <Link className="partLink" to="/parts/type/gpu">
-        GPUs
-      </Link>
-      <Link className="partLink" to="/parts/type/ram">
-        RAM
-      </Link>
-      <Link className="partLink" to="/parts/type/motherboard">
-        Motherboards
-      </Link>
-      <Link className="partLink" to="/parts/type/case">
-        Cases
-      </Link>
-      <Link className="partLink" to="/parts/type/other">
-        Other parts
-      </Link>
-      <Link className="partLink" to="/parts/create">
-        Create a part
-      </Link>
-      {/* </div> */}
+      <div className="partLinks">
+        <div className="partLink">
+          <Link to="/parts/type/cpu">
+            <img
+              src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/452/external-cpu-cyber-security-kiranshastry-lineal-kiranshastry-4.png"
+              alt="show-CPUs"
+            />
+            CPUs
+          </Link>
+        </div>
+        <div className="partLink">
+          <Link to="/parts/type/gpu">
+            <img src="" alt="show-GPUs" />
+            GPUs
+          </Link>
+        </div>
+        <div className="partLink">
+          <Link to="/parts/type/ram">
+            <img src="" alt="show-GPUs" />
+            RAM
+          </Link>
+        </div>
+        <div className="partLink">
+          <Link to="/parts/type/motherboard">
+            <img src="" alt="show-GPUs" />
+            Motherboards
+          </Link>
+        </div>
+        <div className="partLink">
+          <Link to="/parts/type/case">
+            <img src="" alt="show-GPUs" />
+            Cases
+          </Link>
+        </div>
+        <div className="partLink">
+          <Link to="/parts/type/other">
+            <img src="" alt="show-GPUs" />
+            Other parts
+          </Link>
+        </div>
+        <div className="partLink">
+          <Link to="/parts/create">
+            <img src="" alt="show-GPUs" />
+            Create a part
+          </Link>
+        </div>
+      </div>
     </main>
   )
 }
