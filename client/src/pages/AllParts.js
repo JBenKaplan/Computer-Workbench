@@ -30,48 +30,66 @@ const AllParts = () => {
       <Nav />
       <div className="partLinks">
         <div className="partLink">
+          CPUs
           <Link to="/parts/type/cpu">
             <img
               src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/452/external-cpu-cyber-security-kiranshastry-lineal-kiranshastry-4.png"
               alt="show-CPUs"
             />
-            CPUs
           </Link>
         </div>
         <div className="partLink">
+          GPUs
           <Link to="/parts/type/gpu">
-            <img src="" alt="show-GPUs" />
-            GPUs
+            <img
+              src="https://img.icons8.com/external-outline-lafs/452/external-ic_gpu-mining-outline-lafs.png"
+              alt="show-GPUs"
+            />
           </Link>
         </div>
         <div className="partLink">
+          RAM
           <Link to="/parts/type/ram">
-            <img src="" alt="show-GPUs" />
-            RAM
+            <img
+              src="https://img.icons8.com/carbon-copy/452/computer-ram.png"
+              alt="show-RAM"
+            />
           </Link>
         </div>
         <div className="partLink">
+          Motherboards
           <Link to="/parts/type/motherboard">
-            <img src="" alt="show-GPUs" />
-            Motherboards
+            <img
+              src="https://img.icons8.com/dotty/452/motherboard.png"
+              alt="show-Motherboards"
+            />
           </Link>
         </div>
         <div className="partLink">
+          Cases
           <Link to="/parts/type/case">
-            <img src="" alt="show-GPUs" />
-            Cases
+            <img
+              src="https://img.icons8.com/external-rabit-jes-detailed-outline-rabit-jes/452/external-computer-case-computer-hardware-rabit-jes-detailed-outline-rabit-jes.png"
+              alt="show-Cases"
+            />
           </Link>
         </div>
         <div className="partLink">
+          Other parts
           <Link to="/parts/type/other">
-            <img src="" alt="show-GPUs" />
-            Other parts
+            <img
+              src="https://img.icons8.com/external-inkubators-basic-outline-inkubators/452/external-other-user-interface-inkubators-basic-outline-inkubators.png"
+              alt="show-Other"
+            />
           </Link>
         </div>
         <div className="partLink">
+          Create a part
           <Link to="/parts/create">
-            <img src="" alt="show-GPUs" />
-            Create a part
+            <img
+              src="https://img.icons8.com/puffy/452/experimental-create-new-puffy.png"
+              alt="Create-new-part"
+            />
           </Link>
         </div>
       </div>
