@@ -1,6 +1,6 @@
 .navbar {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   background-color: #74747485;
 }
 
@@ -20,6 +20,14 @@
   width: 250px;
   height: 400px;
   align-items: center;
+}
+
+.partLinks {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px;
+  justify-content: space-between;
 }
 
 header {

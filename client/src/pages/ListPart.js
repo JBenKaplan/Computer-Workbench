@@ -1,13 +1,16 @@
 import Nav from '../components/Nav'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import { useParams } from 'react-router-dom'
+import PartTable from '../components/PartTable'
 
 const AllParts = () => {
   const [parts, setParts] = useState([])
 
+  const { id } = useParams()
   const getParts = async () => {
     try {
-      let res = await axios.get('http://localhost:3001/parts/type/other')
+      let res = await axios.get(`http://localhost:3001/parts/type/${id}`)
       console.log(res.data.part)
       setParts(res.data.part)
     } catch (err) {
@@ -22,14 +25,10 @@ const AllParts = () => {
   return (
     <main>
       <Nav />
-      <div className="partList">
+      <div className="allParts">
         {parts.map((part) => (
           <div key={part._id}>
-            <img src={part.image} alt="picture" />
-            <p>{part.name}</p>
-            <p>${part.price}</p>
-            <p className="detailsList">{part.details}</p>
-            <button className="addOTHER">Add Part</button>
+            <PartTable part={part} />
           </div>
         ))}
       </div>

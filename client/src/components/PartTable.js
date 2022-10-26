@@ -21,8 +21,8 @@ const PartTable = (props) => {
       `http://localhost:3001/wb/${formState.workbench_id}/${props.part._id}`,
       formState
     )
+
     console.log('submitted')
-    console.log(res)
     setFormState(initialState)
   }
 
