@@ -107,7 +107,7 @@ const addPartToBench = async (req, res) => {
 const removePartFromBench = async (req, res) => {
   try {
     const bench = await WorkBench.findByIdAndUpdate(req.params.id, {
-      $slice: { parts: req.params.part_id }
+      $pull: { parts: req.params.part_id }
     })
     Part.inUse = false
     return res.status(202).send(bench)

@@ -2,15 +2,15 @@ import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import Nav from '../components/Nav'
 import axios from 'axios'
+import PartInTable from '../components/PartInTable'
 
-const ShowWorkBench = () => {
+const ShowWorkBench = (props) => {
   const [parts, setParts] = useState([])
   const [cost, setCost] = useState(0)
   const [budget, setBudget] = useState(0)
   const [benchCreated, setBenchCreated] = useState(false)
 
   const { id } = useParams()
-
   const navigate = useNavigate()
 
   const getParts = async (req, res) => {
@@ -51,15 +51,6 @@ const ShowWorkBench = () => {
     }
   }
 
-  const removePart = async (req, res) => {
-    try {
-      let res = await axios.put(`http://localhost:3001/wb/${id}/`)
-      console.log('Part removed')
-    } catch (err) {
-      console.log(err)
-    }
-  }
-
   useEffect(() => {
     getParts()
     getCost()
@@ -80,31 +71,7 @@ const ShowWorkBench = () => {
       <div className="workBenchList">
         {parts.map((part) => (
           <div key={part._id}>
-            <table>
-              <tbody>
-                <tr>
-                  <td>
-                    <img
-                      className="partPicture"
-                      src={part.image}
-                      alt="picture"
-                    />
-                  </td>
-                  <td className="partName">
-                    <p>{part.name}</p>
-                  </td>
-                  <td className="partPrice">
-                    <p>${part.price}</p>
-                  </td>
-                  <td>
-                    <p className="detailsList">{part.details}</p>
-                  </td>
-                  <td className="partButtons">
-                    <button className="removePart">Remove</button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <PartInTable part={part} />
           </div>
         ))}
       </div>
