@@ -6,9 +6,9 @@ const Nav = () => {
 
   return (
     <nav className="navbar">
-      <button onClick={() => navigate(-1)}>Back</button>
       <button onClick={() => navigate('/')}>Home</button>
       <button onClick={() => navigate('/parts/all')}>All Parts</button>
+      <button onClick={() => navigate(-1)}>Back</button>
     </nav>
   )
 }

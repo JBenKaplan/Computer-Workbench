@@ -8,11 +8,15 @@ import AllParts from './pages/AllParts'
 import ListPart from './pages/ListPart'
 import AllBenches from './pages/AllWorkBench'
 import ShowWorkBench from './pages/ShowWorkBench'
+import Nav from './components/Nav'
 
 const App = () => {
   return (
     <div className="App">
-      <header></header>
+      <header className="titleBlock">
+        <h1 className="title">Computer Workbench</h1>
+        <Nav />
+      </header>
       <div className="routes">
         <Routes>
           <Route path="/" element={<Home />} />

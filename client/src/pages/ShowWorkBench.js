@@ -58,7 +58,6 @@ const ShowWorkBench = (props) => {
 
   return (
     <main>
-      <Nav />
       <div className="money">
         <p className="budget">Total Budget: ${budget}</p>
         <p className="totalCost">Total Cost: ${cost}</p>

@@ -21,7 +21,6 @@ const AllBenches = () => {
 
   return (
     <main>
-      <Nav />
       <div>
         <WorkBench benches={benches} />
       </div>

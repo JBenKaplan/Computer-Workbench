@@ -24,7 +24,6 @@ const AllParts = () => {
 
   return (
     <main>
-      <Nav />
       <div className="allParts">
         {parts.map((part) => (
           <div key={part._id}>

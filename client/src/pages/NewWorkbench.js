@@ -24,7 +24,6 @@ const NewWorkBench = () => {
 
   return (
     <main>
-      <Nav />
       <h2>Create your Workbench</h2>
       <form onSubmit={handleSubmit} className="newBench">
         <label htmlFor="owner">Name:</label>

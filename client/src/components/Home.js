@@ -28,7 +28,6 @@ const Home = (props) => {
 
   return (
     <main>
-      <Nav />
       <h1>Choose WorkBench</h1>
       <div className="workBenches">
         {benches.map((bench) => (

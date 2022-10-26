@@ -30,8 +30,7 @@ const CreatePart = () => {
   }
 
   return (
-    <div>
-      <Nav />
+    <div className="createPartForm">
       <h3>Create a New Part</h3>
       <form onSubmit={handleSubmit} className="newPart">
         <label htmlFor="partType">Type of Part:</label>

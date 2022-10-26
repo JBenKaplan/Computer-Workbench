@@ -25,7 +25,6 @@ const AllParts = () => {
 
   return (
     <main>
-      <Nav />
       <div className="partLinks">
         <div className="partLink">
           <Link to="/parts/type/cpu">
