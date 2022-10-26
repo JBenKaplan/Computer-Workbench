@@ -12,6 +12,7 @@ const CreatePart = () => {
     SKU: '',
     inUse: false,
     image: '',
+    link: '',
     workbench_id: ''
   }
   const [formState, setFormState] = useState(initialState)
@@ -70,6 +71,13 @@ const CreatePart = () => {
           type="text"
           id="SKU"
           value={formState.SKU}
+        />
+        <label htmlFor="link">Link:</label>
+        <input
+          onChange={handleChange}
+          type="text"
+          id="link"
+          value={formState.link}
         />
         <label htmlFor="Image">Image URL:</label>
         <input

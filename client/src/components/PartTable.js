@@ -50,7 +50,13 @@ const PartTable = (props) => {
           <td>
             <p className="detailsList">{props.part.details}</p>
           </td>
+          <td>
+            <p className="link">{props.part.link}</p>
+          </td>
           <td className="partButtons">
+            <td>
+              <button>Edit Part</button>
+            </td>
             <form onSubmit={handleSubmit} className="addPart">
               <label htmlFor="addWorkbench"></label>
               <select

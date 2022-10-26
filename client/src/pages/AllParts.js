@@ -28,15 +28,29 @@ const AllParts = () => {
   return (
     <main>
       <Nav />
-      <div className="partLinks">
-        <Link to="/parts/type/cpu">CPUs</Link>
-        <Link to="/parts/type/gpu">GPUs</Link>
-        <Link to="/parts/type/ram">RAM</Link>
-        <Link to="/parts/type/motherboard">Motherboards</Link>
-        <Link to="/parts/type/case">Cases</Link>
-        <Link to="/parts/type/other">Other parts</Link>
-        <Link to="/parts/create">Create a part</Link>
-      </div>
+      {/* <div className="partLinks"> */}
+      <Link className="partLink" to="/parts/type/cpu">
+        CPUs
+      </Link>
+      <Link className="partLink" to="/parts/type/gpu">
+        GPUs
+      </Link>
+      <Link className="partLink" to="/parts/type/ram">
+        RAM
+      </Link>
+      <Link className="partLink" to="/parts/type/motherboard">
+        Motherboards
+      </Link>
+      <Link className="partLink" to="/parts/type/case">
+        Cases
+      </Link>
+      <Link className="partLink" to="/parts/type/other">
+        Other parts
+      </Link>
+      <Link className="partLink" to="/parts/create">
+        Create a part
+      </Link>
+      {/* </div> */}
     </main>
   )
 }
