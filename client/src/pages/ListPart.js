@@ -26,7 +26,7 @@ const AllParts = () => {
     <main>
       <div className="allParts">
         {parts.map((part) => (
-          <div key={part._id}>
+          <div key={Math.floor(Math.random() * 1000)}>
             <PartTable part={part} />
           </div>
         ))}

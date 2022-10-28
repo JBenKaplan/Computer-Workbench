@@ -8,6 +8,7 @@ const CreatePart = () => {
     type: '',
     price: '',
     details: '',
+    key: 0,
     brand: '',
     SKU: '',
     inUse: false,
@@ -18,6 +19,8 @@ const CreatePart = () => {
   const [formState, setFormState] = useState(initialState)
 
   const handleSubmit = async (event) => {
+    let key = Math.floor(Math.random() * 1000)
+    formState.key = key
     console.log(formState)
     event.preventDefault()
     let res = await axios.post('http://localhost:3001/parts/create', formState)

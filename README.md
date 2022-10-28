@@ -1,10 +1,12 @@
 # Computer Workbench
 
+<img src='client/images/Homepage.png' alt='home-page' />
+
 ### By: Ben Kaplan
 
 ### Date: 10/28/2022
 
-| [GitHub](https://github.com/JBenKaplan) | [Trello](https://trello.com/b/aBLRMNPP/computer-workbench) | [LinkedIn](https://www.linkedin.com/in/jbenkaplan/) | [Game Page (TBD)]() |
+| [GitHub](https://github.com/JBenKaplan) | [Trello](https://trello.com/b/aBLRMNPP/computer-workbench) | [LinkedIn](https://www.linkedin.com/in/jbenkaplan/) |
 
 ---
 
@@ -42,12 +44,12 @@ This application will allow you to build computers either within certain price r
 
 ---
 
-[Icons](https://icons8.com/icons) |
+[Icons](https://icons8.com/icons)
 
 ### Future Updates
 
 ---
 
+- [ ] More parts in list
 - [ ] Login ability
 - [ ] Auto populate part data from url
-- [ ] More parts in list

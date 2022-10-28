@@ -69,7 +69,7 @@ const ShowWorkBench = (props) => {
       </div>
       <div className="workBenchList">
         {parts.map((part) => (
-          <div key={part._id}>
+          <div key={Math.floor(Math.random() * 1000)}>
             <PartInTable part={part} />
           </div>
         ))}

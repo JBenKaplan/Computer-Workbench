@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 const PartTable = (props) => {
   const initialState = { workbench_id: '' }
@@ -21,7 +22,6 @@ const PartTable = (props) => {
       `http://localhost:3001/wb/${formState.workbench_id}/${props.part._id}`,
       formState
     )
-
     console.log('submitted')
     setFormState(initialState)
   }
@@ -52,12 +52,14 @@ const PartTable = (props) => {
             <p className="detailsList">{props.part.details}</p>
           </td>
           <td>
-            <p className="link">{props.part.link}</p>
+            <button>
+              <a target="_blank" rel="noreferrer" href={props.part.link}>
+                Link
+              </a>
+            </button>
           </td>
           <td className="partButtons">
-            <td>
-              <button>Edit Part</button>
-            </td>
+            <button>Edit Part</button>
             <form onSubmit={handleSubmit} className="addPart">
               <label htmlFor="addWorkbench"></label>
               <select

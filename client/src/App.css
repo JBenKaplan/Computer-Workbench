@@ -111,6 +111,10 @@ img {
   flex-flow: wrap row;
 }
 
+.workBenches:hover {
+  cursor: pointer;
+}
+
 .new-workbench {
   display: flex;
   flex-direction: column;
