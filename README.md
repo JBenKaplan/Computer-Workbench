@@ -38,7 +38,7 @@ This application will allow you to build computers either within certain price r
   - Mongodb
   - Express
 - Deployment
-  - Heroku (Tentatively)
+  - Heroku
 
 ## Credits
 
