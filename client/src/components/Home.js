@@ -28,7 +28,7 @@ const Home = (props) => {
 
   return (
     <main>
-      <h1>Choose WorkBench</h1>
+      <h1>Available WorkBenches</h1>
       <div className="workBenches">
         {benches.map((bench) => (
           <div

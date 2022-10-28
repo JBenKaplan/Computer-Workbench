@@ -59,7 +59,6 @@ const PartTable = (props) => {
             </button>
           </td>
           <td className="partButtons">
-            {/* <button>Edit Part</button> */}
             <form onSubmit={handleSubmit} className="addPart">
               <label htmlFor="addWorkbench"></label>
               <select

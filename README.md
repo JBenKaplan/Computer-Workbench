@@ -4,7 +4,7 @@ Home Page
 <img src='client/images/Homepage.png' alt='home-page' />
 Part types
 <img src='client/images/PartsSection.png' alt='home-page' />
-Part type
+Part of type
 <img src='client/images/CPUSection.png' alt='home-page' />
 A filled workbench
 <img src='client/images/workbenchList.png' alt='home-page' />

@@ -55,9 +55,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #3e4b8ea1;
+  /* background-color: #3e4b8ea1; */
   margin: 0 auto 10px auto;
   border: rgb(5, 77, 150) solid 3px;
+  background-image: url('https://imgs.search.brave.com/2dV3GpzNsjc_-lRowzdBRhddXRpE9QEZ3LbqQjJiK9o/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9jZG4u/d2FsbHBhcGVyc2Fm/YXJpLmNvbS82LzE4/L2Z3RExFYS5qcGc');
 }
 
 Nav {
