@@ -8,7 +8,7 @@ const main = async () => {
   const benches = [
     {
       owner: 'Freeform',
-      budget: 5000,
+      budget: 999999,
       image:
         'https://imgs.search.brave.com/n--bK2CmDwn2kfbpLAmCuacY3TUyyqeAKojrYGWSCyw/rs:fit:480:480:1/g:ce/aHR0cHM6Ly93d3cu/ZGFkZHljb21wZXIu/Y29tL3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDE3LzA0L21haW5n/ZWFyLWVwaWMtZ2Ft/aW5nLXBjLTEtNDgw/eDQ4MC5qcGc',
       userCreated: false

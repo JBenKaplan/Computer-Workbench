@@ -1,12 +1,19 @@
 # Computer Workbench
 
+Home Page
 <img src='client/images/Homepage.png' alt='home-page' />
+Part types
+<img src='client/images/PartsSection.png' alt='home-page' />
+Part type
+<img src='client/images/CPUSection.png' alt='home-page' />
+A filled workbench
+<img src='client/images/workbenchList.png' alt='home-page' />
 
 ### By: Ben Kaplan
 
 ### Date: 10/28/2022
 
-| [GitHub](https://github.com/JBenKaplan) | [Trello](https://trello.com/b/aBLRMNPP/computer-workbench) | [LinkedIn](https://www.linkedin.com/in/jbenkaplan/) |
+| [GitHub](https://github.com/JBenKaplan) | [Trello](https://trello.com/b/aBLRMNPP/computer-workbench) | [LinkedIn](https://www.linkedin.com/in/jbenkaplan/) | [Deployed Site](https://computer-workbench.herokuapp.com/) |
 
 ---
 
@@ -20,7 +27,7 @@ This application will allow you to build computers either within certain price r
 
 ---
 
-- Start your own workbench.
+- Start your own workbench or choose a workbench you'd like to work on.
 - Create a new computer build from different templates or from scratch.
 - Adjust builds as you see fit and add in any parts you desire.
 
@@ -40,12 +47,6 @@ This application will allow you to build computers either within certain price r
 - Deployment
   - Heroku
 
-## Credits
-
----
-
-[Icons](https://icons8.com/icons)
-
 ### Future Updates
 
 ---
@@ -53,3 +54,9 @@ This application will allow you to build computers either within certain price r
 - [ ] More parts in list
 - [ ] Login ability
 - [ ] Auto populate part data from url
+
+## Credits
+
+---
+
+[Icons](https://icons8.com/icons)
